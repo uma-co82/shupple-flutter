@@ -41,10 +41,6 @@ class _SignUpSceneState extends State<SignUpScene> {
     );
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("sample"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
