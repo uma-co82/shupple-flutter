@@ -41,10 +41,26 @@ class _SignUpSceneState extends State<SignUpScene> {
     );
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [loginBtnFb],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: FractionalOffset.topLeft,
+            end: FractionalOffset.bottomRight,
+            colors: [
+              Color(0xffe4a972).withOpacity(0.6),
+              Color(0xff9941d8).withOpacity(0.6),
+            ],
+            stops: const [
+              0.0,
+              1.0,
+            ],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [loginBtnFb],
+          ),
         ),
       ),
     );
