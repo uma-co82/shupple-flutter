@@ -59,7 +59,17 @@ class _SignUpSceneState extends State<SignUpScene> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [loginBtnFb],
+            children: [
+              Text(
+                "shupple",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 50.0,
+                    color: Colors.white),
+              ),
+              SizedBox(height: 60),
+              loginBtnFb
+            ],
           ),
         ),
       ),
