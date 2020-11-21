@@ -61,7 +61,7 @@ class _SignUpSceneState extends State<SignUpScene> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "shupple",
+                "",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 50.0,
