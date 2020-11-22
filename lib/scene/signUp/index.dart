@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:shupple_flutter/component/facebook_signin_btn.dart';
+import 'package:shupple_flutter/component/facebookSigninBtn.dart';
 
 class SignUpScene extends StatefulWidget {
   @override
