@@ -10,6 +10,7 @@ class _HogeSceneState extends State<HogeScene> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Form(
         child: Column(
           children: [
@@ -25,7 +26,8 @@ class _HogeSceneState extends State<HogeScene> {
                   initialDate: DateTime(2002),
                   firstDate: DateTime(2002),
                   initialDatePickerMode: DatePickerMode.year,
-                  lastDate: DateTime.now());
+                  lastDate: DateTime.now(),
+                  locale: Locale('ja'));
             })
           ],
         ),
