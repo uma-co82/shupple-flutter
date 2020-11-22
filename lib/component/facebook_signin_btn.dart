@@ -8,7 +8,11 @@ class FacebookSigninBtn {
     @required Color textColor,
     @required OnPressed onPressed,
   }) =>
-      RaisedButton(child: child, onPressed: onPressed);
+      RaisedButton(
+          child: child,
+          color: color,
+          textColor: textColor,
+          onPressed: onPressed);
 }
 
 typedef Future OnPressed();
