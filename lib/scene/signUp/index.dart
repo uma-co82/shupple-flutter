@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:shupple_flutter/component/facebook_signin_btn.dart';
 
 class SignUpScene extends StatefulWidget {
   @override
@@ -33,12 +34,11 @@ class _SignUpSceneState extends State<SignUpScene> {
 
   @override
   Widget build(BuildContext context) {
-    Widget loginBtnFb = RaisedButton(
-      child: Text("Sign in with Facebook"),
-      color: Color(0xFF3B5998),
-      textColor: Colors.white,
-      onPressed: signInWithFacebook,
-    );
+    Widget loginBtnFb = FacebookSigninBtn.of(
+        child: Text("Sign in with Facebook"),
+        color: Color(0xFF3B5998),
+        textColor: Colors.white,
+        onPressed: signInWithFacebook);
 
     return Scaffold(
       body: Container(
