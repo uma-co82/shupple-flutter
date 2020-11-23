@@ -1,10 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shupple_flutter/model/route.dart';
 import 'package:shupple_flutter/scene/home/index.dart';
 import 'package:shupple_flutter/scene/register/index.dart';
 import 'package:shupple_flutter/scene/signUp/index.dart';
+
+import 'domain/model/route.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
