@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shupple_flutter/model/route.dart';
 import 'package:shupple_flutter/scene/home/index.dart';
 import 'package:shupple_flutter/scene/register/index.dart';
@@ -15,6 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ja'),
+      ],
       title: 'Flutter Demo',
       initialRoute: SRoute.register,
       routes: <String, WidgetBuilder>{
