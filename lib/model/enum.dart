@@ -135,79 +135,79 @@ extension PrefectureExtension on Prefecture {
         return "静岡県";
         break;
       case Prefecture.Aiti:
-        // TODO: Handle this case.
+        return "愛知県";
         break;
       case Prefecture.Mie:
-        // TODO: Handle this case.
+        return "三重県";
         break;
       case Prefecture.Shiga:
-        // TODO: Handle this case.
+        return "滋賀県";
         break;
       case Prefecture.Kyoto:
-        // TODO: Handle this case.
+        return "京都府";
         break;
       case Prefecture.Osaka:
-        // TODO: Handle this case.
+        return "大阪府";
         break;
       case Prefecture.Hyogo:
-        // TODO: Handle this case.
+        return "兵庫県";
         break;
       case Prefecture.Nara:
-        // TODO: Handle this case.
+        return "奈良県";
         break;
       case Prefecture.Wakayama:
-        // TODO: Handle this case.
+        return "和歌山県";
         break;
       case Prefecture.Tottori:
-        // TODO: Handle this case.
+        return "鳥取県";
         break;
       case Prefecture.Shimane:
-        // TODO: Handle this case.
+        return "島根県";
         break;
       case Prefecture.Okayama:
-        // TODO: Handle this case.
+        return "岡山県";
         break;
       case Prefecture.Hiroshima:
-        // TODO: Handle this case.
+        return "広島県";
         break;
       case Prefecture.Yamaguchi:
-        // TODO: Handle this case.
+        return "山口県";
         break;
       case Prefecture.Tokushima:
-        // TODO: Handle this case.
+        return "徳島県";
         break;
       case Prefecture.Kagawa:
-        // TODO: Handle this case.
+        return "香川県";
         break;
       case Prefecture.Ehime:
-        // TODO: Handle this case.
+        return "愛媛県";
         break;
       case Prefecture.Koti:
-        // TODO: Handle this case.
+        return "高知県";
         break;
       case Prefecture.Hukuoka:
-        // TODO: Handle this case.
+        return "福岡県";
         break;
       case Prefecture.Saga:
-        // TODO: Handle this case.
+        return "佐賀県";
         break;
       case Prefecture.Nagasaki:
-        // TODO: Handle this case.
+        return "長崎県";
         break;
       case Prefecture.Kumamoto:
-        // TODO: Handle this case.
+        return "熊本県";
         break;
       case Prefecture.Oita:
-        // TODO: Handle this case.
+        return "大分県";
         break;
       case Prefecture.Miyazaki:
-        // TODO: Handle this case.
+        return "宮崎県";
         break;
       case Prefecture.Kagoshima:
-        // TODO: Handle this case.
+        return "鹿児島県";
         break;
       case Prefecture.Okinawa:
-        // TODO: Handle this case.
+        return "沖縄県";
         break;
     }
   }
