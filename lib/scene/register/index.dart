@@ -11,6 +11,14 @@ class RegisterScene extends StatefulWidget {
 class _RegisterSceneState extends State<RegisterScene> {
   @override
   Widget build(BuildContext context) {
+    String _name = "";
+    String _email = "";
+    DateTime _birthdate = DateTime(2002);
+    Gender _gender = Gender.Male;
+    Prefecture _prefecture = Prefecture.Hokkaido;
+    MatchingReason _matchingReason = MatchingReason.Asobi;
+    String _profile = "";
+
     return Scaffold(
       appBar: AppBar(),
       body: Form(
@@ -27,30 +35,42 @@ class _RegisterSceneState extends State<RegisterScene> {
                 onPressed: () async {
                   await showDatePicker(
                       context: context,
-                      initialDate: DateTime(2002),
+                      initialDate: _birthdate,
                       firstDate: DateTime(2002),
                       initialDatePickerMode: DatePickerMode.year,
                       lastDate: DateTime.now(),
                       locale: Locale('ja'));
                 }),
             DropdownButton(
-                value: "Male",
+                value: _gender,
                 items: Gender.values
                     .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
-                          child: Text(e.toJp),
+                          child: Text(e.jpLabel),
                           value: EnumToString.convertToString(e),
                         ))
                     .toList(),
                 onChanged: (val) {}),
             DropdownButton(
-                value: "Hokkaido",
+                value: _prefecture,
                 items: Prefecture.values
                     .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
-                          child: Text(e.toJp),
+                          child: Text(e.jpLabel),
                           value: EnumToString.convertToString(e),
                         ))
                     .toList(),
-                onChanged: (val) {})
+                onChanged: (val) {}),
+            DropdownButton(
+                value: _matchingReason,
+                items: MatchingReason.values
+                    .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
+                          child: Text(e.jpLabel),
+                          value: EnumToString.convertToString(e),
+                        ))
+                    .toList(),
+                onChanged: (val) {}),
+            TextFormField(
+              decoration: InputDecoration(labelText: "プロフィール"),
+            ),
           ],
         ),
       ),
