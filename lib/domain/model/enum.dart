@@ -1,7 +1,7 @@
 enum Gender { Male, Female }
 
 extension GenderExtension on Gender {
-  String get toJp {
+  String get jpLabel {
     switch (this) {
       case Gender.Male:
         return "男性";
@@ -66,7 +66,7 @@ enum Prefecture {
 }
 
 extension PrefectureExtension on Prefecture {
-  String get toJp {
+  String get jpLabel {
     switch (this) {
       case Prefecture.Hokkaido:
         return "北海道";
@@ -208,6 +208,27 @@ extension PrefectureExtension on Prefecture {
         break;
       case Prefecture.Okinawa:
         return "沖縄県";
+        break;
+    }
+  }
+}
+
+enum MatchingReason { Renai, Asobi, NomitomoSagashi, SyumatsuDate }
+
+extension MatchingReasonExtension on MatchingReason {
+  String get jpLabel {
+    switch (this) {
+      case MatchingReason.Renai:
+        return "恋愛";
+        break;
+      case MatchingReason.Asobi:
+        return "遊び";
+        break;
+      case MatchingReason.NomitomoSagashi:
+        return "飲み友探し";
+        break;
+      case MatchingReason.SyumatsuDate:
+        return "週末お出掛け";
         break;
     }
   }
