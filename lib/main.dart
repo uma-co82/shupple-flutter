@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shupple_flutter/model/route.dart';
-import 'package:shupple_flutter/scene/hoge/index.dart';
 import 'package:shupple_flutter/scene/home/index.dart';
+import 'package:shupple_flutter/scene/register/index.dart';
 import 'package:shupple_flutter/scene/signUp/index.dart';
 
 void main() async {
@@ -16,11 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: SRoute.hoge,
+      initialRoute: SRoute.register,
       routes: <String, WidgetBuilder>{
         SRoute.home: (BuildContext ctx) => HomeScene(),
         SRoute.signUp: (BuildContext ctx) => SignUpScene(),
-        SRoute.hoge: (BuildContext ctx) => HogeScene()
+        SRoute.register: (BuildContext ctx) => HogeScene()
       },
     );
   }
