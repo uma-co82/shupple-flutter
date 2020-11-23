@@ -43,13 +43,23 @@ class _RegisterSceneState extends State<RegisterScene> {
             RaisedButton(
                 child: Text("誕生日"),
                 onPressed: () async {
-                  await showDatePicker(
+                  var picked = await showDatePicker(
                       context: context,
                       initialDate: _birthdate,
                       firstDate: DateTime(2002),
                       initialDatePickerMode: DatePickerMode.year,
                       lastDate: DateTime.now(),
-                      locale: Locale('ja'));
+                      locale: Locale('ja'),
+                      builder: (BuildContext context, Widget child) {
+                        return Theme(
+                          data: ThemeData.dark(),
+                          child: child,
+                        );
+                      });
+                  if (picked != null)
+                    setState(() {
+                      _birthdate = picked;
+                    });
                 }),
             DropdownButton(
                 value: EnumToString.convertToString(_gender),
