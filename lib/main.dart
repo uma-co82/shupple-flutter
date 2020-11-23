@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         SRoute.home: (BuildContext ctx) => HomeScene(),
         SRoute.signUp: (BuildContext ctx) => SignUpScene(),
-        SRoute.register: (BuildContext ctx) => HogeScene()
+        SRoute.register: (BuildContext ctx) => RegisterScene()
       },
     );
   }
