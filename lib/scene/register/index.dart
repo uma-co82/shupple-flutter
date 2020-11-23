@@ -20,15 +20,17 @@ class _RegisterSceneState extends State<RegisterScene> {
             TextFormField(
               decoration: InputDecoration(labelText: "email"),
             ),
-            RaisedButton(onPressed: () async {
-              await showDatePicker(
-                  context: context,
-                  initialDate: DateTime(2002),
-                  firstDate: DateTime(2002),
-                  initialDatePickerMode: DatePickerMode.year,
-                  lastDate: DateTime.now(),
-                  locale: Locale('ja'));
-            })
+            RaisedButton(
+                child: Text("誕生日"),
+                onPressed: () async {
+                  await showDatePicker(
+                      context: context,
+                      initialDate: DateTime(2002),
+                      firstDate: DateTime(2002),
+                      initialDatePickerMode: DatePickerMode.year,
+                      lastDate: DateTime.now(),
+                      locale: Locale('ja'));
+                })
           ],
         ),
       ),
