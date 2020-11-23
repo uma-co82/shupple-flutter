@@ -1,7 +1,7 @@
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shupple_flutter/model/enum.dart';
+import 'package:shupple_flutter/domain/model/enum.dart';
 
 class RegisterScene extends StatefulWidget {
   @override
