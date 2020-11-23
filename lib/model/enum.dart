@@ -1,5 +1,20 @@
 enum Gender { Male, Female }
 
+extension GenderExtension on Gender {
+  String get toJp {
+    switch (this) {
+      case Gender.Male:
+        return "男性";
+        break;
+      case Gender.Female:
+        return "女性";
+        break;
+      default:
+        return "";
+    }
+  }
+}
+
 enum Prefecture {
   Hokkaido,
   Aomori,
