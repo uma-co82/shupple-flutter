@@ -19,6 +19,26 @@ class _RegisterSceneState extends State<RegisterScene> {
     MatchingReason _matchingReason = MatchingReason.Renai;
     String _profile = "";
 
+    void _showBirthdatePicker() async {
+      var picked = await showDatePicker(
+          context: context,
+          initialDate: _birthdate,
+          firstDate: DateTime(2002),
+          initialDatePickerMode: DatePickerMode.year,
+          lastDate: DateTime.now(),
+          locale: Locale('ja'),
+          builder: (BuildContext context, Widget child) {
+            return Theme(
+              data: ThemeData.dark(),
+              child: child,
+            );
+          });
+      if (picked != null)
+        setState(() {
+          _birthdate = picked;
+        });
+    }
+
     return Scaffold(
       appBar: AppBar(),
       body: Form(
@@ -40,27 +60,7 @@ class _RegisterSceneState extends State<RegisterScene> {
                 });
               },
             ),
-            RaisedButton(
-                child: Text("誕生日"),
-                onPressed: () async {
-                  var picked = await showDatePicker(
-                      context: context,
-                      initialDate: _birthdate,
-                      firstDate: DateTime(2002),
-                      initialDatePickerMode: DatePickerMode.year,
-                      lastDate: DateTime.now(),
-                      locale: Locale('ja'),
-                      builder: (BuildContext context, Widget child) {
-                        return Theme(
-                          data: ThemeData.dark(),
-                          child: child,
-                        );
-                      });
-                  if (picked != null)
-                    setState(() {
-                      _birthdate = picked;
-                    });
-                }),
+            RaisedButton(child: Text("誕生日"), onPressed: _showBirthdatePicker),
             DropdownButton(
                 value: EnumToString.convertToString(_gender),
                 items: Gender.values
@@ -90,6 +90,11 @@ class _RegisterSceneState extends State<RegisterScene> {
                 onChanged: (val) {}),
             TextFormField(
               decoration: InputDecoration(labelText: "プロフィール"),
+              onChanged: (value) {
+                setState(() {
+                  _profile = value;
+                });
+              },
             ),
           ],
         ),
