@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HogeScene extends StatefulWidget {
+class RegisterScene extends StatefulWidget {
   @override
-  _HogeSceneState createState() => _HogeSceneState();
+  _RegisterSceneState createState() => _RegisterSceneState();
 }
 
-class _HogeSceneState extends State<HogeScene> {
+class _RegisterSceneState extends State<RegisterScene> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
