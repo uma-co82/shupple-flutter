@@ -1,5 +1,7 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shupple_flutter/model/enum.dart';
 
 class RegisterScene extends StatefulWidget {
   @override
@@ -30,7 +32,15 @@ class _RegisterSceneState extends State<RegisterScene> {
                       initialDatePickerMode: DatePickerMode.year,
                       lastDate: DateTime.now(),
                       locale: Locale('ja'));
-                })
+                }),
+            DropdownButton(
+                items: Gender.values
+                    .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
+                          child: Text(e.toJp),
+                          value: EnumToString.convertToString(e),
+                        ))
+                    .toList(),
+                onChanged: (val) {})
           ],
         ),
       ),
