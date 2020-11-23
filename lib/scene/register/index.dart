@@ -120,7 +120,11 @@ class _RegisterSceneState extends State<RegisterScene> {
                       email: _email,
                       gender: EnumToString.convertToString(_gender),
                       birthdate: _birthdate.toString(),
-                      prefecture: EnumToString.convertToString(_prefecture));
+                      prefecture: EnumToString.convertToString(_prefecture),
+                      matchingReason:
+                          EnumToString.convertToString(_matchingReason),
+                      profile: _profile);
+                  print(hoge.toJson());
                 })
           ],
         ),
