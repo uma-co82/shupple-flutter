@@ -34,7 +34,17 @@ class _RegisterSceneState extends State<RegisterScene> {
                       locale: Locale('ja'));
                 }),
             DropdownButton(
+                value: "Male",
                 items: Gender.values
+                    .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
+                          child: Text(e.toJp),
+                          value: EnumToString.convertToString(e),
+                        ))
+                    .toList(),
+                onChanged: (val) {}),
+            DropdownButton(
+                value: "Hokkaido",
+                items: Prefecture.values
                     .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
                           child: Text(e.toJp),
                           value: EnumToString.convertToString(e),
