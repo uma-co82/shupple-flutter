@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         Locale('ja'),
       ],
-      title: 'Flutter Demo',
+      title: 'shupple',
       initialRoute: SRoute.register,
       routes: <String, WidgetBuilder>{
         SRoute.home: (BuildContext ctx) => HomeScene(),
