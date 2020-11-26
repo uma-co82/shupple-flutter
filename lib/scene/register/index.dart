@@ -115,6 +115,7 @@ class _RegisterSceneState extends State<RegisterScene> {
                   _profile = value;
                 });
               },
+              validator: (val) => SValidator.profileValidator(val),
             ),
             RaisedButton(
                 child: Text("登録"),
