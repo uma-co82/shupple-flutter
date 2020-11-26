@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shupple_flutter/domain/entity/user.dart';
 import 'package:shupple_flutter/domain/model/enum.dart';
+import 'package:shupple_flutter/domain/model/validator.dart';
 
 class RegisterScene extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class RegisterScene extends StatefulWidget {
 }
 
 class _RegisterSceneState extends State<RegisterScene> {
+  final _formKey = GlobalKey<FormState>();
   String _name = "";
   String _email = "";
   DateTime _birthdate = DateTime(2002);
@@ -43,6 +45,7 @@ class _RegisterSceneState extends State<RegisterScene> {
     return Scaffold(
       appBar: AppBar(),
       body: Form(
+        key: _formKey,
         child: Column(
           children: [
             TextFormField(
@@ -52,6 +55,7 @@ class _RegisterSceneState extends State<RegisterScene> {
                   _name = value;
                 });
               },
+              validator: (String val) => SValidator.nameValidator(val),
             ),
             TextFormField(
               decoration: InputDecoration(labelText: "email"),
@@ -60,6 +64,7 @@ class _RegisterSceneState extends State<RegisterScene> {
                   _email = value;
                 });
               },
+              validator: (String val) => SValidator.emailValidator(val),
             ),
             RaisedButton(child: Text("誕生日"), onPressed: _showBirthdatePicker),
             DropdownButton(
@@ -114,17 +119,19 @@ class _RegisterSceneState extends State<RegisterScene> {
             RaisedButton(
                 child: Text("登録"),
                 onPressed: () {
-                  var hoge = UserRegisterRequest(
-                      firebaseToken: "",
-                      name: _name,
-                      email: _email,
-                      gender: EnumToString.convertToString(_gender),
-                      birthdate: _birthdate.toString(),
-                      prefecture: EnumToString.convertToString(_prefecture),
-                      matchingReason:
-                          EnumToString.convertToString(_matchingReason),
-                      profile: _profile);
-                  print(hoge.toJson());
+                  if (_formKey.currentState.validate()) {
+                    var hoge = UserRegisterRequest(
+                        firebaseToken: "",
+                        name: _name,
+                        email: _email,
+                        gender: EnumToString.convertToString(_gender),
+                        birthdate: _birthdate.toString(),
+                        prefecture: EnumToString.convertToString(_prefecture),
+                        matchingReason:
+                            EnumToString.convertToString(_matchingReason),
+                        profile: _profile);
+                    print(hoge.toJson());
+                  }
                 })
           ],
         ),
