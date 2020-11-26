@@ -1,3 +1,5 @@
+import 'package:email_validator/email_validator.dart';
+
 class SValidator {
   static String nameValidator(String val) {
     if (val.isEmpty) {
@@ -6,6 +8,11 @@ class SValidator {
   }
 
   static String emailValidator(String val) {
-    if
+    if (val.isEmpty) {
+      return "emailを入力して下さい";
+    }
+    if (!EmailValidator.validate(val)) {
+      return "正しいemailを入力して下さい";
+    }
   }
 }
