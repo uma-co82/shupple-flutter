@@ -15,4 +15,10 @@ class SValidator {
       return "正しいemailを入力して下さい";
     }
   }
+
+  static String profileValidator(String val) {
+    if (val.isEmpty) {
+      return "プロフィールを入力して下さい";
+    }
+  }
 }
