@@ -52,10 +52,17 @@ class _RegisterSceneState extends State<RegisterScene> {
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: Column(
                       children: [
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         TextFormField(
                           decoration: InputDecoration(
-                              labelText: "ユーザー名",
-                              labelStyle: TextStyle(fontSize: 12.0)),
+                            hintText: 'ユーザー名',
+                            contentPadding:
+                                EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(32.0)),
+                          ),
                           onChanged: (value) {
                             setState(() {
                               _name = value;
@@ -64,8 +71,18 @@ class _RegisterSceneState extends State<RegisterScene> {
                           validator: (String val) =>
                               SValidator.nameValidator(val),
                         ),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         TextFormField(
-                          decoration: InputDecoration(labelText: "email"),
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            hintText: 'email',
+                            contentPadding:
+                                EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(32.0)),
+                          ),
                           onChanged: (value) {
                             setState(() {
                               _email = value;
@@ -74,9 +91,15 @@ class _RegisterSceneState extends State<RegisterScene> {
                           validator: (String val) =>
                               SValidator.emailValidator(val),
                         ),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         RaisedButton(
                             child: Text("誕生日"),
                             onPressed: _showBirthdatePicker),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         DropdownButton(
                             value: EnumToString.convertToString(_gender),
                             items: Gender.values
