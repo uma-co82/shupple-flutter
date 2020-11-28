@@ -114,6 +114,9 @@ class _RegisterSceneState extends State<RegisterScene> {
                                     EnumToString.fromString(Gender.values, val);
                               });
                             }),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         DropdownButton(
                             value: EnumToString.convertToString(_prefecture),
                             items: Prefecture.values
@@ -128,6 +131,9 @@ class _RegisterSceneState extends State<RegisterScene> {
                                     Prefecture.values, val);
                               });
                             }),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         DropdownButton(
                             value:
                                 EnumToString.convertToString(_matchingReason),
@@ -144,6 +150,9 @@ class _RegisterSceneState extends State<RegisterScene> {
                                     MatchingReason.values, val);
                               });
                             }),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
                         TextFormField(
                           decoration: InputDecoration(labelText: "プロフィール"),
                           onChanged: (value) {
@@ -152,6 +161,9 @@ class _RegisterSceneState extends State<RegisterScene> {
                             });
                           },
                           validator: (val) => SValidator.profileValidator(val),
+                        ),
+                        const SizedBox(
+                          height: 30.0,
                         ),
                         RaisedButton(
                             child: Text("登録"),
