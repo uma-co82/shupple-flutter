@@ -134,7 +134,7 @@ class _RegisterSceneState extends State<RegisterScene> {
                             child: Text("登録"),
                             onPressed: () {
                               if (_formKey.currentState.validate()) {
-                                var hoge = UserRegisterRequest(
+                                var req = UserRegisterRequest(
                                     firebaseToken: "",
                                     name: _name,
                                     email: _email,
@@ -147,7 +147,7 @@ class _RegisterSceneState extends State<RegisterScene> {
                                         EnumToString.convertToString(
                                             _matchingReason),
                                     profile: _profile);
-                                print(hoge.toJson());
+                                print(req.toJson());
                               }
                             })
                       ],
