@@ -50,17 +50,32 @@ class _RegisterSceneState extends State<RegisterScene> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Form(
             key: _formKey,
             child: Flexible(
                 child: Container(
                     width: MediaQuery.of(context).size.width * 0.8,
-                    child: Column(
+                    child: SingleChildScrollView(
+                        child: Column(
                       children: [
                         const SizedBox(
-                          height: 30.0,
+                          height: 100.0,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                "プロフィールを入力して下さい",
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 50.0,
                         ),
                         TextFormField(
                           decoration: InputDecoration(
@@ -214,9 +229,9 @@ class _RegisterSceneState extends State<RegisterScene> {
                                     profile: _profile);
                                 print(req.toJson());
                               }
-                            })
+                            }),
                       ],
-                    ))))
+                    )))))
       ]),
     );
   }
