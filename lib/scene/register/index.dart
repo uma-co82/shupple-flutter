@@ -94,9 +94,14 @@ class _RegisterSceneState extends State<RegisterScene> {
                         const SizedBox(
                           height: 30.0,
                         ),
-                        RaisedButton(
-                            child: Text("誕生日"),
-                            onPressed: _showBirthdatePicker),
+                        Row(
+                          children: [
+                            Expanded(child: Text(_birthdate.toString())),
+                            RaisedButton(
+                                child: Text("誕生日"),
+                                onPressed: _showBirthdatePicker),
+                          ],
+                        ),
                         const SizedBox(
                           height: 30.0,
                         ),
