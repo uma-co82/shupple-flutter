@@ -103,10 +103,11 @@ class _RegisterSceneState extends State<RegisterScene> {
                         ),
                         Row(
                           children: [
-                            Expanded(child: Text(STime.birthdate(_birthdate))),
+                            Expanded(child: Text("生年月日は？")),
                             RaisedButton(
-                                color: Colors.purpleAccent,
-                                child: Text("誕生日"),
+                                color: Colors.cyan,
+                                child: Text(STime.birthdate(_birthdate)),
+                                shape: const StadiumBorder(),
                                 onPressed: _showBirthdatePicker),
                           ],
                         ),
@@ -132,39 +133,52 @@ class _RegisterSceneState extends State<RegisterScene> {
                         const SizedBox(
                           height: 30.0,
                         ),
-                        DropdownButton(
-                            value: EnumToString.convertToString(_prefecture),
-                            items: Prefecture.values
-                                .map((e) => DropdownMenuItem(
-                                      child: Text(e.jpLabel),
-                                      value: EnumToString.convertToString(e),
-                                    ))
-                                .toList(),
-                            onChanged: (val) {
-                              setState(() {
-                                _prefecture = EnumToString.fromString(
-                                    Prefecture.values, val);
-                              });
-                            }),
+                        Row(
+                          children: [
+                            Expanded(child: Text("どこにお住まいですか？")),
+                            DropdownButton(
+                                value:
+                                    EnumToString.convertToString(_prefecture),
+                                items: Prefecture.values
+                                    .map((e) => DropdownMenuItem(
+                                          child: Text(e.jpLabel),
+                                          value:
+                                              EnumToString.convertToString(e),
+                                        ))
+                                    .toList(),
+                                onChanged: (val) {
+                                  setState(() {
+                                    _prefecture = EnumToString.fromString(
+                                        Prefecture.values, val);
+                                  });
+                                })
+                          ],
+                        ),
                         const SizedBox(
                           height: 30.0,
                         ),
-                        DropdownButton(
-                            value:
-                                EnumToString.convertToString(_matchingReason),
-                            items: MatchingReason.values
-                                .map<DropdownMenuItem<String>>((e) =>
-                                    DropdownMenuItem(
-                                      child: Text(e.jpLabel),
-                                      value: EnumToString.convertToString(e),
-                                    ))
-                                .toList(),
-                            onChanged: (val) {
-                              setState(() {
-                                _matchingReason = EnumToString.fromString(
-                                    MatchingReason.values, val);
-                              });
-                            }),
+                        Row(
+                          children: [
+                            Expanded(child: Text("アプリ利用目的は？")),
+                            DropdownButton(
+                                value: EnumToString.convertToString(
+                                    _matchingReason),
+                                items: MatchingReason.values
+                                    .map<DropdownMenuItem<String>>((e) =>
+                                        DropdownMenuItem(
+                                          child: Text(e.jpLabel),
+                                          value:
+                                              EnumToString.convertToString(e),
+                                        ))
+                                    .toList(),
+                                onChanged: (val) {
+                                  setState(() {
+                                    _matchingReason = EnumToString.fromString(
+                                        MatchingReason.values, val);
+                                  });
+                                }),
+                          ],
+                        ),
                         const SizedBox(
                           height: 30.0,
                         ),
@@ -181,7 +195,8 @@ class _RegisterSceneState extends State<RegisterScene> {
                           height: 30.0,
                         ),
                         RaisedButton(
-                            child: Text("登録"),
+                            child: Text("             登録            "),
+                            shape: const StadiumBorder(),
                             onPressed: () {
                               if (_formKey.currentState.validate()) {
                                 var req = UserRegisterRequest(
