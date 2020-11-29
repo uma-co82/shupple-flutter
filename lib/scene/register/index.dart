@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shupple_flutter/domain/entity/user.dart';
 import 'package:shupple_flutter/domain/model/enum.dart';
+import 'package:shupple_flutter/domain/model/time.dart';
 import 'package:shupple_flutter/domain/model/validator.dart';
 
 class RegisterScene extends StatefulWidget {
@@ -38,6 +39,12 @@ class _RegisterSceneState extends State<RegisterScene> {
       setState(() {
         _birthdate = picked;
       });
+  }
+
+  void _genderOnChange(Gender val) {
+    setState(() {
+      _gender = val;
+    });
   }
 
   @override
@@ -96,8 +103,9 @@ class _RegisterSceneState extends State<RegisterScene> {
                         ),
                         Row(
                           children: [
-                            Expanded(child: Text(_birthdate.toString())),
+                            Expanded(child: Text(STime.birthdate(_birthdate))),
                             RaisedButton(
+                                color: Colors.purpleAccent,
                                 child: Text("誕生日"),
                                 onPressed: _showBirthdatePicker),
                           ],
@@ -105,20 +113,22 @@ class _RegisterSceneState extends State<RegisterScene> {
                         const SizedBox(
                           height: 30.0,
                         ),
-                        DropdownButton(
-                            value: EnumToString.convertToString(_gender),
-                            items: Gender.values
-                                .map((e) => DropdownMenuItem(
-                                      child: Text(e.jpLabel),
-                                      value: EnumToString.convertToString(e),
-                                    ))
-                                .toList(),
-                            onChanged: (val) {
-                              setState(() {
-                                _gender =
-                                    EnumToString.fromString(Gender.values, val);
-                              });
-                            }),
+                        Row(
+                          children: [
+                            Expanded(
+                                child: RadioListTile(
+                                    title: Text(Gender.Male.jpLabel),
+                                    value: Gender.Male,
+                                    groupValue: _gender,
+                                    onChanged: _genderOnChange)),
+                            Expanded(
+                                child: RadioListTile(
+                                    title: Text(Gender.Female.jpLabel),
+                                    value: Gender.Female,
+                                    groupValue: _gender,
+                                    onChanged: _genderOnChange)),
+                          ],
+                        ),
                         const SizedBox(
                           height: 30.0,
                         ),
